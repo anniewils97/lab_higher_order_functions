@@ -13,7 +13,7 @@ ScranAdvisor.prototype.findRestaurantByName = function(name) {
 };
 
 ScranAdvisor.prototype.findAllRestaurants = function(name){
-    return this.restaurants.map(name, 0, restaurants);
+    return this.restaurants.map(restaurant => restaurant.name);
 }
 
 module.exports = ScranAdvisor;
