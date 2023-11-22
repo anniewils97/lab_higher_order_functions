@@ -41,5 +41,11 @@ ScranAdvisor.prototype.findMostCommonCuisine = function() {
      }
  
      return mostCommonCuisine;
- };
+ }
+
+ ScranAdvisor.prototype.searchByName = function (substring) {
+    return this.restaurants.filter((restaurant) =>
+        restaurant.name.toLowerCase().includes(substring.toLowerCase())
+    );
+ }
 module.exports = ScranAdvisor;

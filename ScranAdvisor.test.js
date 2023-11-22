@@ -129,10 +129,45 @@ describe('ScranAdvisor', () => {
       const actual = scranAdvisor.findMostCommonCuisine();
       expect(actual).toEqual(expected);
   });
+  test('can find restaurants with a given substring in their name', () => {
+    const substring = 'ru';
+    const expected = [
+        {
+            id: 6,
+            name: "Rudy's Pizza",
+            address: "Peter Street",
+            postcode: "M2 5QJ",
+            website: "https://www.rudyspizza.co.uk/pizzerias/peterst",
+            cuisines: ["PIZZA"],
+            location: { id: 5, town: "Manchester", neighbourhood: "City Centre" },
+            latitude: 53.47842331842055,
+            longitude: -2.2474895790689655,
+        },
+        {
+            id: 16,
+            name: "Humble Crumble Camden",
+            address: "Unit 739, Camden Market",
+            postcode: "NW1 8AH",
+            website: "https://www.humble-crumble.com/",
+            cuisines: ["SWEET"],
+            location: { id: 13, town: "London", neighbourhood: "Camden" },
+            latitude: 51.54257526961926,
+            longitude: -0.1481973203643318,
+        },
+        {
+            id: 24,
+            name: "The Gordon Highlander",
+            address: "W High Street",
+            postcode: "AB51 3QQ",
+            website: "https://www.jdwetherspoon.com/pubs/all-pubs/scotland/aberdeen/the-gordon-highlander-inverurie",
+            cuisines: ["BRITISH"],
+            location: { id: 4, town: "Inverurie", neighbourhood: "Town Centre" },
+            latitude: 57.284996342160724,
+            longitude: -2.3796990138752268,
+        },
+    ];
 
-    test.skip('can find restaurant with substring', () => {
-
-    })
-
-
-})
+    const actual = scranAdvisor.searchByName(substring);
+    expect(actual).toEqual(expected);
+});
+});
