@@ -37,11 +37,11 @@ describe('ScranAdvisor', () => {
             "latitude": 52.475159788534754,
             "longitude": -1.8966440079643896
         };
-        const actual = scranAdvisor.findRestaurantByName();
+        const actual = scranAdvisor.findRestaurantByName("Happy Lamb Hot Pot");
         expect(actual).toEqual(expected);
     })
 
-    test.skip('can find the name of all restaurants', () => {
+    test('can find the name of all restaurants', () => {
         const expected = [
             'Oro',
             'Halloumi South',
@@ -67,8 +67,8 @@ describe('ScranAdvisor', () => {
             "Gopal's Corner Victoria",
             'The Gordon Highlander'
           ]
-          const actual = null;
-          expect(actual).toBe(expected);
+          const actual = scranAdvisor.findAllRestaurants();
+          expect(actual).toEqual(expected);
     })
 
     test.skip('can find all restaurants from Glasgow', () => {

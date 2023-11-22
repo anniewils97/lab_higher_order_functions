@@ -9,6 +9,11 @@ ScranAdvisor.prototype.countRestaurants = function(){
 }
 
 ScranAdvisor.prototype.findRestaurantByName = function(name) {
-    return this.restaurants.filter(restaurant => restaurant.name.includes(name));
+    return this.restaurants.find(restaurant => restaurant.name === name);
 };
+
+ScranAdvisor.prototype.findAllRestaurants = function(name){
+    return this.restaurants.map(name, 0, restaurants);
+}
+
 module.exports = ScranAdvisor;
